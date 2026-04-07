@@ -1,0 +1,31 @@
+name: "realworld-openenv"
+description: "An OpenEnv environment with three real-world tasks: email triage, data cleaning, and code review."
+version: "1.0.0"
+author: "Solo Warrior"
+license: "MIT"
+
+tasks:
+  - id: "email-triage"
+    description: "Classify emails into spam, urgent, or normal."
+    difficulty: "easy"
+    grader: "envs/email_env.py"
+
+  - id: "data-cleaning"
+    description: "Clean messy tabular data into consistent format."
+    difficulty: "medium"
+    grader: "envs/data_clean_env.py"
+
+  - id: "code-review"
+    description: "Detect bugs or style issues in Python code snippets."
+    difficulty: "hard"
+    grader: "envs/code_review_env.py"
+
+interfaces:
+  observation: "pydantic.BaseModel"
+  action: "pydantic.BaseModel"
+  reward: "float"
+
+entrypoints:
+  reset: "reset()"
+  step: "step(action)"
+  state: "state()"

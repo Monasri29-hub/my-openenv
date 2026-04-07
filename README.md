@@ -1,0 +1,8 @@
+- Overview: Real‑world OpenEnv environment with 3 tasks.
+- Action/Observation Spaces: Describe inputs/outputs for each task.
+- Tasks:
+- Email triage (easy).
+- Data cleaning (medium).
+- Code review (hard).
+- Setup: docker build -t openenv . → docker run openenv.
+- Baseline Scores: Show reproducible results.
