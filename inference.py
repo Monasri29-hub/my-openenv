@@ -61,7 +61,13 @@ def run_task(env, task_name):
     finally:
         print(f"[END] success={str(success).lower()} steps={step_count} rewards={','.join(rewards)}")
 
-if __name__ == "__main__":
+def run_all_tasks():
     run_task(email_env.EmailEnv(), "email-triage")
     run_task(data_clean_env.DataCleanEnv(), "data-cleaning")
     run_task(code_review_env.CodeReviewEnv(), "code-review")
+
+if __name__ == "__main__":
+    run_all_tasks()
+    import time
+    while True:
+        time.sleep(60)
